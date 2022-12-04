@@ -1,28 +1,13 @@
+package day2;
+
+import utils.MyFiles;
+
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 
 public class Main {
     public static void main(String[] args) throws IOException {
         Move[] moves = fileToMoves("src/input.txt");
         System.out.println(getTotalPoints(moves));
-    }
-
-    // reads a file and returns the contents as a string
-    public static String readFile(String path) throws IOException {
-        byte[] encoded = Files.readAllBytes(Paths.get(path));
-        return new String(encoded, StandardCharsets.UTF_8);
-    }
-
-    //    splits a string into an array of strings
-    public static String[] split(String s) {
-        return s.split("\n");
-    }
-
-    //    turns a file into a list of strings
-    public static String[] fileToList(String path) throws IOException {
-        return split(readFile(path));
     }
 
     // converts a two letter string to a "Move" object containing the moves of two players
@@ -47,7 +32,7 @@ public class Main {
 
     // maps a file to a list of moves
     public static Move[] fileToMoves(String path) throws IOException {
-        String[] strings = fileToList(path);
+        String[] strings = MyFiles.fileToList(path);
         Move[] moves = new Move[strings.length];
         for (int i = 0; i < strings.length; i++) {
             moves[i] = stringToMove2(strings[i]);
