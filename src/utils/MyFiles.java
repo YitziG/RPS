@@ -21,4 +21,12 @@ public class MyFiles {
     public static String[] splitOnNewLines(String s) {
         return s.split("\n");
     }
+
+    // reverse a string and delete all '0's
+    public static String reverseAndDeleteZeros(String s) {
+        return new StringBuilder(s).reverse().toString().replaceAll("0", "");
+    }
+
+
+
 }

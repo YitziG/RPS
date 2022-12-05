@@ -36,8 +36,8 @@ public class Day4 {
     }
 
     // checks if either range contains the other range
-    public static boolean contains(int[] r1, int[] r2) {
-        return r1[0] <= r2[0] && r1[1] >= r2[1];
+    private static boolean contains(int[] range1, int[] range2) {
+        return range1[0] <= range2[0] && range1[1] >= range2[1];
     }
 
     // checks if two ranges overlap
